@@ -7,10 +7,17 @@ pipeline{
                 junit'/target/surefire-reports/*.xml'
             }
         }
-        stage('Show login page credentails'){
+        stage('Show login page username'){
+            steps{
             echo "Username: ${USERNAME}"
-            echo "Password: ${PASSWORD} "
+
         }
+}
+       stage('Show login page password'){
+            steps{
+            echo "password: ${password}"
         
         }
+}
     }
+}
