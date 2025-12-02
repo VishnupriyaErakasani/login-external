@@ -1,0 +1,21 @@
+pipeline{
+    agent any 
+    stages{
+        stage('checkout'){
+            steps{
+                checkout scm 
+            }
+        stage('archive'){
+            steps{
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                junit'/target/surefire-reports/*.xml'
+            }
+        }
+        stage('Show login page credentails'){
+            echo "Username: ${USERNAME}"
+            echo "Password: ${PASSWORD} "
+        }
+        
+        }
+    }
+}
