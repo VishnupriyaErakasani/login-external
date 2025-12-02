@@ -1,12 +1,7 @@
 pipeline{
     agent any 
     stages{
-        stage('archive'){
-            steps{
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-                junit'/target/surefire-reports/*.xml'
-            }
-        }
+        
         stage('Show login page username'){
             steps{
             echo "Username: ${USERNAME}"
