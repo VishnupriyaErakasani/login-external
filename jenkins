@@ -4,13 +4,13 @@ pipeline{
         
         stage('Show login page username'){
             steps{
-            echo "Username: ${USERNAME}"
+            echo "Username: USERNAME"
 
         }
 }
        stage('Show login page password'){
             steps{
-            echo "password: ${password}"
+            echo "password: password"
         
         }
 }
